@@ -1,28 +1,25 @@
-/**
- * Responsável: Parte A (Sensores).
- * Faixa realista sugerida para a simulação: 30 a 100 %.
- *
- * O construtor abaixo é CONTRATO (o menu da Parte C usa exatamente esta assinatura).
- */
 public class SensorUmidade extends ComponenteTerritorial implements Sensor {
+
+    private static final double MIN = 30.0;
+    private static final double MAX = 100.0;
+    private static final double LIMITE_PADRAO = 90.0;
 
     private double limite;
 
     public SensorUmidade(int id, String nome, String regiao) {
         super(id, nome, regiao);
-        // TODO Parte A: valor inicial do limite
+        this.limite = LIMITE_PADRAO;
     }
 
     @Override
     public double lerValor() {
-        // TODO Parte A: simular leitura com Math.random()
-        return 0.0;
+        double valor = MIN + Math.random() * (MAX - MIN);
+        return Math.round(valor * 100.0) / 100.0;
     }
 
     @Override
     public boolean verificarFuncionamento() {
-        // TODO Parte A
-        return true;
+        return "ATIVO".equals(status);
     }
 
     @Override
@@ -37,7 +34,9 @@ public class SensorUmidade extends ComponenteTerritorial implements Sensor {
 
     @Override
     public void definirLimite(double limite) {
-        // TODO Parte A: validar e guardar
+        if (limite > 0) {
+            this.limite = limite;
+        }
     }
 
     @Override
@@ -47,13 +46,13 @@ public class SensorUmidade extends ComponenteTerritorial implements Sensor {
 
     @Override
     public boolean ultrapassouLimite(double valor) {
-        // TODO Parte A
-        return false;
+        return valor > limite;
     }
 
     @Override
     public String verificarStatus() {
-        // TODO Parte A: ex. "Sensor de Chuva #1 (Centro) - ATIVO - funcionando"
-        return nome + " - " + status;
+        String funcionamento = verificarFuncionamento() ? "funcionando" : "fora de operacao";
+        return nome + " #" + id + " (" + regiao + ") - " + status + " - " + funcionamento
+             + " | limite: " + limite + " " + getUnidade();
     }
 }
