@@ -38,6 +38,27 @@ public class DadosTerritorio {
     /** Altera um limiar SOMENTE com o código de acesso correto e valor dentro da faixa. */
     public boolean setLimiar(String tipoSensor, double valor, String codigoInformado) {
         // TODO Parte C
+        if (codigoAcesso.equals(codigoInformado)) {
+            return true;
+        }
+        switch(tipoSensor) {
+            case Sensor.TIPO_CHUVA:
+                if (valor < 0 || valor > 500) {
+                    System.out.println("Erro: chuva fora da faixa (0 a 500).");
+                    return false;
+                }
+                this.limiarChuva = valor;
+                return true;
+            // faça os outros dois casos sozinho, no mesmo modelo
+
+            0000000000case Sensor.TIPO_NIVEL_RIO:
+                
+            default:
+                System.out.println("Erro: tipo de sensor desconhecido.");
+                return false;
+    }
+
+            
         return false;
     }
 
@@ -45,13 +66,23 @@ public class DadosTerritorio {
 
     public boolean setRegiao(String regiao) {
         // TODO Parte C: rejeitar vazio/null
-        return false;
-    }
+        if (regiao == null || regiao.isEmpty()) {
+            System.out.println("Erro: Região inválida");
+            return false;
+        }
+        this.regiao = regiao;
+        return true;
 
     public int getPopulacao() { return populacao; }
 
     public boolean setPopulacao(int populacao) {
         // TODO Parte C: rejeitar negativo
+        if (populacao < 0) {
+            System.out.println("População inválida");
+            return false;
+        }
+        this.populacao = populacao;
+        return true;
         return false;
     }
 }
