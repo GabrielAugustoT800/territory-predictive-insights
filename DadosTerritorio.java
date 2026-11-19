@@ -41,6 +41,17 @@ public class DadosTerritorio {
         if (codigoAcesso.equals(codigoInformado)) {
             return true;
         }
+
+        if (codigoInformado == null || !codigoAcesso.equals(codigoInformado)) {
+            System.out.println("Erro: código de acesso incorreto.");
+            return false;
+        }
+
+        if (tipoSensor == null) {
+            System.out.println("O sensor não existe.");
+            return false;
+        }
+        
         switch(tipoSensor) {
             case Sensor.TIPO_CHUVA:
                 if (valor < 0 || valor > 500) {
@@ -49,25 +60,29 @@ public class DadosTerritorio {
                 }
                 this.limiarChuva = valor;
                 return true;
-            // faça os outros dois casos sozinho, no mesmo modelo
 
-            0000000000case Sensor.TIPO_NIVEL_RIO:
-                
-            default:
-                System.out.println("Erro: tipo de sensor desconhecido.");
-                return false;
-    }
+            case Sensor.TIPO_NIVEL_RIO:
+                if (valor < 0 || valor > 20) {
+                    System.out.println("Erro: nível de chuva fora do limite de faixa (0 a 2).");
+                    return false;
+                }
+                this.limiarNivelRio = valor;
+                return true;
 
-            
-        return false;
+            case Sensor.TIPO_UMIDADE:
+                if (valor < 0 || valor > 100) {
+                    System.out.println("Erro: umidade fora do limite de faixa (0 a 100).");
+                    return false;
+                }
+                this.limiarUmidade = valor;
+                return true;
     }
 
     public String getRegiao() { return regiao; }
 
     public boolean setRegiao(String regiao) {
-        // TODO Parte C: rejeitar vazio/null
         if (regiao == null || regiao.isEmpty()) {
-            System.out.println("Erro: Região inválida");
+            System.out.println("Erro: Região inválida.");
             return false;
         }
         this.regiao = regiao;
@@ -76,13 +91,11 @@ public class DadosTerritorio {
     public int getPopulacao() { return populacao; }
 
     public boolean setPopulacao(int populacao) {
-        // TODO Parte C: rejeitar negativo
         if (populacao < 0) {
-            System.out.println("População inválida");
+            System.out.println("Erro: População inválida.");
             return false;
         }
         this.populacao = populacao;
         return true;
-        return false;
     }
 }
