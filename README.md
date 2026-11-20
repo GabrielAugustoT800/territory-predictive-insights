@@ -88,7 +88,11 @@ Encerra o programa.
 
 ## Público beneficiado
 
-Moradores de áreas sujeitas a alagamento e a equipe (Defesa Civil, prefeitura ou associação de bairro) que acompanha essas regiões. O sistema apoia decisões como reforçar o monitoramento de um ponto, avisar a comunidade com antecedência ou acionar uma vistoria antes de o problema acontecer.
+**Moradores de comunidades ribeirinhas**, que vivem às margens de rios e córregos urbanos.
+
+**Por quê:** são as primeiras pessoas atingidas quando o rio transborda, e os três sensores do sistema medem justamente o que antecede esse transbordamento: a chuva que cai, o nível do rio que sobe e a umidade do solo, que indica quando a terra já não absorve mais água. Muitas vezes essas famílias só percebem o risco quando a água já está entrando em casa.
+
+**Decisão que o sistema apoia:** com o alerta antecipado, os moradores e a associação do bairro podem decidir com tempo se tiram móveis e documentos do chão, se levam crianças, idosos e animais para um local seguro, ou se apenas ficam atentos às próximas leituras.
 
 ## Arquitetura e conceitos de OOP
 
