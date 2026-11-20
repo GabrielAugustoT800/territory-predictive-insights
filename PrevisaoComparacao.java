@@ -13,9 +13,7 @@ public class PrevisaoComparacao extends EstrategiaPrevisao {
         super("Comparação de Períodos", "Período atual vs. período anterior");
 
         if (tamanhoPeriodo <= 0) { // validacao pra impedirt periodos com tamanho zero ou negativo
-            throw new IllegalArgumentException(
-                    "O tamanho do período deve ser maior que zero."
-            );
+            throw new IllegalArgumentException("O tamanho do período deve ser maior que zero.");
         }
 
         this.tamanhoPeriodo = tamanhoPeriodo;
@@ -51,7 +49,7 @@ public class PrevisaoComparacao extends EstrategiaPrevisao {
         double variacao = mediaAtual - mediaAnterior;
         double previsao = mediaAtual + variacao;
 
-        return Math.max(0, previsao); // impede q a previsao seja negativa
+        return Math.max(0, previsao); // impede que a previsao seja negativa
     }
 
     @Override

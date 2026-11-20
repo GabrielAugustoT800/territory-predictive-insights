@@ -7,15 +7,11 @@ public class GeradorAlertas {
     /** Decide o nível conforme a regra descrita em NivelAlerta. */
     public NivelAlerta classificar(double valorPrevisto, double limiar) {
         if (Double.isNaN(valorPrevisto) || Double.isInfinite(valorPrevisto)) { // validacao dop bvalor previsto
-            throw new IllegalArgumentException(
-                    "O valor previsto deve ser válido."
-            );
+            throw new IllegalArgumentException("O valor previsto deve ser válido.");
         }
 
         if (Double.isNaN(limiar) || Double.isInfinite(limiar) || limiar <= 0) { // validacao do limiar
-            throw new IllegalArgumentException(
-                    "O limiar deve ser um número positivo e válido."
-            );
+            throw new IllegalArgumentException("O limiar deve ser um número positivo e válido.");
         }
 
         double percentual = valorPrevisto / limiar;

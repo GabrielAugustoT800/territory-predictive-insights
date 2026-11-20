@@ -14,7 +14,7 @@ public class TestePrevisao {
 
         double limiarChuva = 50.0;
 
-        // craicao das estrategias
+        // criacao das estrategias
         EstrategiaPrevisao media = new PrevisaoMediaMovel(3);
         EstrategiaPrevisao comparacao = new PrevisaoComparacao(3);
 
@@ -37,7 +37,11 @@ public class TestePrevisao {
 
         double previsao = media.prever(poucasLeituras);
 
-        Alerta alerta = gerador.avaliar("CHUVA", media.getNome(), previsao, limiarChuva);
+        Alerta alerta = gerador.avaliar(
+                "CHUVA",
+                media.getNome(),
+                previsao,
+                limiarChuva);
 
         if (alerta == null) {
             System.out.println("Previsão indisponível.");
@@ -50,8 +54,7 @@ public class TestePrevisao {
             EstrategiaPrevisao estrategia,
             ArrayList<Double> leituras,
             double limiar,
-            GeradorAlertas gerador
-    ) {
+            GeradorAlertas gerador) {
 
         System.out.println("\nEstratégia: " + estrategia.getNome());
 

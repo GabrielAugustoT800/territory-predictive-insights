@@ -12,7 +12,12 @@ public class Alerta {
     private double limiar;
     private NivelAlerta nivel;
 
-    public Alerta(String tipoSensor, String nomeEstrategia, double valorPrevisto, double limiar, NivelAlerta nivel) {
+    public Alerta(
+            String tipoSensor,
+            String nomeEstrategia,
+            double valorPrevisto,
+            double limiar,
+            NivelAlerta nivel) {
         this.tipoSensor = tipoSensor;
         this.nomeEstrategia = nomeEstrategia;
         this.valorPrevisto = valorPrevisto;

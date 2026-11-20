@@ -60,23 +60,19 @@ public abstract class EstrategiaPrevisao {
         String percentualTexto = String.format(Locale.forLanguageTag("pt-BR"), "%.1f%%", percentual);
 
         if (percentual < 80) {
-            return "Valor previsto corresponde a " + percentualTexto
-                    + " do limiar. Situação dentro da faixa normal.";
+            return "Valor previsto corresponde a " + percentualTexto + " do limiar. Situação dentro da faixa normal.";
 
         }
         else if (percentual < 100) {
-            return "Valor previsto corresponde a " + percentualTexto
-                    + " do limiar. Atenção: está próximo do limite.";
+            return "Valor previsto corresponde a " + percentualTexto + " do limiar. Atenção: está próximo do limite.";
 
         }
         else if (percentual < 120) {
-            return "Valor previsto corresponde a " + percentualTexto
-                    + " do limiar. O limite foi atingido ou ultrapassado.";
+            return "Valor previsto corresponde a " + percentualTexto + " do limiar. O limite foi atingido ou ultrapassado.";
 
         }
         else {
-            return "Valor previsto corresponde a " + percentualTexto
-                    + " do limiar. Situação crítica.";
+            return "Valor previsto corresponde a " + percentualTexto + " do limiar. Situação crítica.";
         }
     }
 

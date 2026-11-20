@@ -12,10 +12,8 @@ public class PrevisaoMediaMovel extends EstrategiaPrevisao {
     public PrevisaoMediaMovel(int tamanhoJanela) {
         super("Média Móvel", "Média das últimas N leituras");
 
-        if (tamanhoJanela <= 0) { // validacao pra impedirt janelas com tamanho zero ou negativo
-            throw new IllegalArgumentException(
-                    "O tamanho da janela deve ser maior que zero."
-            );
+        if (tamanhoJanela <= 0) { // validacao pra impedir janelas com tamanho zero ou negativo
+            throw new IllegalArgumentException("O tamanho da janela deve ser maior que zero.");
         }
 
         this.tamanhoJanela = tamanhoJanela;
