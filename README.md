@@ -83,10 +83,6 @@ TODO
 
 ## Integrantes
 
-- Gabriel Augusto da Silva - RM: 567057
-- Lucas Koiti Uyeno de Souza - RM: 568128
-- Lucas Morio Ikeda - RM: 567616
-
 | Nome | RM |
 |---|---|
 | Gabriel Augusto da Silva | RM: 567057 |
