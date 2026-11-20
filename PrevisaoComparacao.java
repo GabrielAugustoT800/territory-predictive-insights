@@ -12,7 +12,7 @@ public class PrevisaoComparacao extends EstrategiaPrevisao {
     public PrevisaoComparacao(int tamanhoPeriodo) {
         super("Comparação de Períodos", "Período atual vs. período anterior");
 
-        if (tamanhoPeriodo <= 0) { // validacao pra impedirt periodos com tamanho zero ou negativo
+        if (tamanhoPeriodo <= 0) { // validacao pra impedir periodos com tamanho zero ou negativo
             throw new IllegalArgumentException("O tamanho do período deve ser maior que zero.");
         }
 
